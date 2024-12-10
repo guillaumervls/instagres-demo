@@ -1,0 +1,22 @@
+{
+  "name": "instagres-demo",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.tsx"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.7",
+    "@neondatabase/serverless": "^0.10.4",
+    "arg": "^5.0.2",
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.38.0",
+    "hono": "^4.6.13",
+    "open": "^10.1.0",
+    "p-wait-for": "^5.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "drizzle-kit": "^0.30.0",
+    "tsx": "^4.19.2"
+  }
+}
