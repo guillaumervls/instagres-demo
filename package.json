@@ -2,7 +2,13 @@
   "name": "instagres-demo",
   "type": "module",
   "scripts": {
-    "dev": "tsx watch src/index.tsx"
+    "postinstall": "npx instagres",
+    "db:push": "drizzle-kit push",
+    "dev:serve": "tsx watch src/index.tsx",
+    "dev:open:waitport": "wait-port localhost:3000",
+    "dev:open:open": "open http://localhost:3000",
+    "dev:open": "run-s dev:open:waitport dev:open:open",
+    "dev": "npm-run-all db:push --parallel dev:serve dev:open"
   },
   "dependencies": {
     "@hono/node-server": "^1.13.7",
@@ -12,11 +18,13 @@
     "drizzle-orm": "^0.38.0",
     "hono": "^4.6.13",
     "open": "^10.1.0",
-    "p-wait-for": "^5.0.2"
+    "p-wait-for": "^5.0.2",
+    "wait-port": "^1.1.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
     "drizzle-kit": "^0.30.0",
+    "npm-run-all": "^4.1.5",
     "tsx": "^4.19.2"
   }
 }
